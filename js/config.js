@@ -5,7 +5,7 @@
 +function(window) {
     requirejs.config({
         urlArgs: 'v=' + new Date().getTime(),
-        baseUrl: '/js/',
+        baseUrl: './js/',
         paths: {
             '$': 'jquery-3.3.1.min',
         },
@@ -23,7 +23,7 @@
             
         },
     });
-    define('_vue', ['/js/vue.js'], function (Vue) {
+    define('_vue', ['./js/vue.js'], function (Vue) {
         return Vue;
     });
     // 注入全局的依赖
