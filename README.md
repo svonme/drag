@@ -3,6 +3,9 @@
     将元素拖动到指定的容器中(基于VUE + Jquery完成的demo, 有心人可以把Jquery的事件代码替换为原生)
 
 
+[查看 demo](https://svonme.github.io/drag)
+
+
 ## 使用示例
     
 ```
