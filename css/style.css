@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+[v-cloak] {
+    visibility: hidden;
+}
+
+ul, li, ol {
+    list-style: none;
+}
+
+.main {
+    margin: 100px 0 0 100px;
+    width: 1200px;
+    height: 300px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+}
+
+.main .nav {
+    width: 300px;
+    height: 100%;
+    border-right: 1px solid #ddd;
+    overflow-y: scroll;
+}
+
+.main .content {
+    width: 400px;
+    height: 100%;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding-top: 20px;
+    color: red;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+.main .content.hover {
+    box-shadow: 0px 0px 10px red;
+}
+
+.main .nav ul {
+    padding-top: 10px;
+    display: block;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: all 0.3s;
+    color: #2E87F0;
+}
+
+.main .content li,
+.main .nav li {
+    height: 30px;
+    display: block;
+    border: 1px solid #dddd;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.main .nav li.on {
+    cursor: pointer;
+}
+.main .nav li.off {
+    cursor: no-drop;
+    color: #ddd;
+}
+
+.main .content li {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+
+.main .nav li.drag-on {
+    position: fixed;
+    width: 280px;
+}
+.main .nav li.drag-move {
+    box-shadow: 0px 0px 10px #2E87F0;
+}
+

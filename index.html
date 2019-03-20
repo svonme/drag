@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素拖动</title>
+    <script src="./js/require.js"></script>
+    <script src="./js/config.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="main" v-cloak>
+        <div class="nav">
+            <ul>
+                <template v-for="(id, i) in list">
+                    <li v-if="includes(id)" class="off" :key="i">{{ id }}</li>
+                    <li v-else :key="i" class="on" v-drag="'.content-1, .content-2'" :clone="true" @dragsuccess="success(id, $event)">{{ id }}</li>
+                </template>
+            </ul>
+        </div>
+        <ul class="content content-1" data-key="con1">
+            <li v-for="(id, i) in con1">{{ id }}</li>
+        </ul>
+        <ul class="content content-2" data-key="con2">
+            <li v-for="(id, i) in con2">{{ id }}</li>
+        </ul>
+    </div>
+</body>
+</html>
