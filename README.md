@@ -10,7 +10,7 @@
     
 ```
 <div>
-    <span v-drag="'#content'" :clone="true" @dragsuccess="success($event)></span>
+    <span v-drag="'#content'" :clone="true" @dragsuccess="success($event)"></span>
     <div id="content"></div>
 </div>
 ```
