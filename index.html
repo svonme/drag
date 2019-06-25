@@ -11,18 +11,26 @@
     <div class="main" v-cloak>
         <div class="nav">
             <ul>
-                <template v-for="(id, i) in list">
-                    <li v-if="includes(id)" class="off" :key="i">{{ id }}</li>
-                    <li v-else :key="i" class="on" v-drag="'.content-1, .content-2'" :clone="true" @dragsuccess="success(id, $event)">{{ id }}</li>
+                <template v-for="(name, i) in list">
+                    <li v-if="includes(name)" class="off" :key="i">{{ name }}</li>
+                    <li v-else :key="i" class="on" v-drag="dragQuerySelector" :clone="true" @dragsuccess="success(name, $event)">{{ name }}</li>
                 </template>
             </ul>
         </div>
-        <ul class="content content-1" data-key="con1">
-            <li v-for="(id, i) in con1">{{ id }}</li>
-        </ul>
-        <ul class="content content-2" data-key="con2">
-            <li v-for="(id, i) in con2">{{ id }}</li>
-        </ul>
+        <div class="drag-box content" data-grade="0">
+            <template v-if="dragList.length > 0">
+                <template v-for="(data, index) in dragList">
+                    <div class="drag-box item" data-grade="1" :data-index="index" :key="index">
+                        <p v-for="(name, j) in data" :key="j">
+                            <span>{{ name }}</span>
+                        </p>
+                    </div>
+                </template>
+            </template>
+            <template v-else>
+                <p class="tips">请拖动做不的元素到此处</p>
+            </template>
+        </div>
     </div>
 </body>
 </html>

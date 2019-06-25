@@ -13,8 +13,7 @@ ul, li, ol {
 }
 
 .main {
-    margin: 100px 0 0 100px;
-    width: 1200px;
+    margin: 100px 100px 0 100px;
     height: 300px;
     border: 1px solid #ddd;
     display: flex;
@@ -28,17 +27,35 @@ ul, li, ol {
     overflow-y: scroll;
 }
 
+
+
 .main .content {
-    width: 400px;
+    flex: 1;
     height: 100%;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+
     padding-top: 20px;
+    padding-bottom: 20px;
     color: red;
     box-sizing: border-box;
     overflow-y: scroll;
 }
-.main .content.hover {
+
+.main .content .tips {
+    text-indent: 20px;
+    font-size: 16px;
+    color: #d1d1d1;
+}
+
+.main .content > .item {
+    margin: 0 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+.main .content > .item + .item {
+    margin-top: 20px;
+}
+
+.main .drag-box.hover {
     box-shadow: 0px 0px 10px red;
 }
 
@@ -83,4 +100,3 @@ ul, li, ol {
 .main .nav li.drag-move {
     box-shadow: 0px 0px 10px #2E87F0;
 }
-
